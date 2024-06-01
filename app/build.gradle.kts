@@ -1,11 +1,22 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    id("androidx.navigation.safeargs")
 }
 
 android {
     namespace = "com.example.quizoficial"
     compileSdk = 34
+    dataBinding{
+        enable = true
+    }
+    viewBinding {
+        enable = true
+    }
+    dataBinding {
+        enable = true
+    }
 
     defaultConfig {
         applicationId = "com.example.quizoficial"
@@ -45,4 +56,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.0")
+
 }
